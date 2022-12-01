@@ -1,28 +1,28 @@
 import React from "react";
 
-const Notes = (props) => {
+const Notes = ({allnotes,onDelete}) => {
     return (
         <>
             <div className="container my-5">
-                <p className="text-center display-3">All Notes</p>
-                <p className="display-6 my-5 "> {
-                    props.allnotes.map((e) => {
+                <div className="text-center display-3">All Notes</div>
+                <div className="display-6 my-5 "> {
+                    allnotes.map((e) => {
                         return (
                             <div key={
                                 e.sno
                             }>
-                                
-                                <div className="my-2">
-                                    {e.sno} <span> - </span>
-                                {e.title}
-                                </div>
-                                <div className="my-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                {e.desc}
-                                </div> 
+                                <div className="card">
+                            <div className="card-body">
+                              <h5 className="card-title"> {e.title}</h5>
+                              <p className="card-text"> {e.desc}</p>
+                                <button className="btn btn-danger btn-sm" onClick={()=>{onDelete(e)}}>Delete</button>
                             </div>
+
+                            </div></div>
+                          
                         )
                     })
-                } </p>
+                } </div>
             </div>
 
         </>
