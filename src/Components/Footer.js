@@ -1,7 +1,11 @@
 import React from "react";
+import '../App.css';
  const Footer = () => {
+
     return(<>
-            This is Footer!
+           <footer className="bg-dark text-center footer ">
+Copyright &copy; Notes Maker By Creativstan
+           </footer>
     </>);
  }
  export default Footer;
